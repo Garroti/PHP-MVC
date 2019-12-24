@@ -4,6 +4,13 @@ namespace MVC;
 
 class Controller 
 {
+  protected $model;
+
+  public function __construct(Model $model)
+  {
+    $this->model = $model;
+  }
+
   protected function render(array $data = [], string $view = null)
   {
     if(!$view){
